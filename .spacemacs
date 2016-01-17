@@ -244,6 +244,10 @@ in `dotspacemacs/user-config'."
   (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
   (dolist (path (reverse (split-string (getenv "PATH") ":")))
     (add-to-list 'exec-path path))
+
+  ;; meta & super key
+  (setq ns-command-modifier (quote meta))
+  (setq ns-alternate-modifier (quote super))
   )
 
 (defun dotspacemacs/user-config ()
