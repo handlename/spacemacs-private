@@ -239,6 +239,12 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  )
+
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration. You are free to put any user code."
   ;; ENV and PATH
   ;; run scripts/shellenv.pl to create init_shellenv.el
   (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
@@ -248,12 +254,13 @@ in `dotspacemacs/user-config'."
   ;; meta & super key
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
-  )
 
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
+  ;; backup files
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
+
+  ;; truncate lines
+  (setq truncate-lines t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
