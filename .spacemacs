@@ -35,7 +35,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     dired
+     my-dired
      my-perl
      )
    ;; List of additional packages that will be installed without being
