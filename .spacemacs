@@ -27,7 +27,7 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     ;; markdown
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -35,6 +35,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     yaml
      my-dired
      my-perl
      )
