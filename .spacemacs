@@ -28,6 +28,7 @@ values."
      emacs-lisp
      git
      github
+     go
      markdown
      ;; org
      ;; (shell :variables
