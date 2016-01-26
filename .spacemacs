@@ -18,25 +18,12 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
+     chrome
      emacs-lisp
      git
      github
      go
      markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
      yaml
      my-dired
      my-perl
@@ -269,12 +256,18 @@ layers configuration. You are free to put any user code."
   ;; truncate lines
   (setq truncate-lines t)
 
-  ;; evil-escape
+  ;; editorconfig
+  (editorconfig-mode 1)
+
+  ;; layer:evil-escape
   (setq-default evil-escape-key-sequence "hh")
   (setq-default evil-escape-delay 0.2)
 
-  ;; editorconfig
-  (editorconfig-mode 1)
+  ;; layer:chrome
+  (setq edit-server-url-major-mode-alist
+    '(("github\\.com" . markdown-mode)))
+  (add-hook 'edit-server-done-hook
+    (lambda () (shell-command "open -a \"Google Chrome\"")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
