@@ -262,6 +262,9 @@ layers configuration. You are free to put any user code."
   ;; editorconfig
   (editorconfig-mode 1)
 
+  ;; open-junk-file
+  (setq open-junk-file-format "~/junk/%Y/%m/%Y%m%d_%H%M%S.")
+
   ;; layer:evil-escape
   (setq-default evil-escape-key-sequence "hh")
   (setq-default evil-escape-delay 0.2)
