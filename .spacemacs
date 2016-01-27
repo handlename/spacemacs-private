@@ -256,6 +256,9 @@ layers configuration. You are free to put any user code."
   ;; truncate lines
   (setq truncate-lines t)
 
+  ;; enable visual line
+  (spacemacs/toggle-visual-line-navigation-on)
+
   ;; editorconfig
   (editorconfig-mode 1)
 
