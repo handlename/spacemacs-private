@@ -266,8 +266,9 @@ layers configuration. You are free to put any user code."
   (setq open-junk-file-format "~/junk/%Y/%m/%Y%m%d_%H%M%S.")
 
   ;; layer:evil-escape
-  (setq-default evil-escape-key-sequence "hh")
-  (setq-default evil-escape-delay 0.2)
+  (setq-default evil-escape-key-sequence "ht")
+  (setq-default evil-escape-unordered-key-sequence t)
+  (setq-default evil-escape-delay 0.05)
 
   ;; layer:chrome
   (setq edit-server-url-major-mode-alist
