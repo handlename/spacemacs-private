@@ -251,6 +251,8 @@ layers configuration. You are free to put any user code."
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
 
+  (global-set-key (kbd "M-<f1>") 'next-multiframe-window)
+
   ;; backup files
   (setq make-backup-files nil)
   (setq auto-save-default nil)
