@@ -17,8 +17,9 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
-     auto-completion
+   '((auto-completion :variables
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      chrome
      emacs-lisp
      git
@@ -290,6 +291,9 @@ layers configuration. You are free to put any user code."
   (setq org-capture-templates
     '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%U\n%i\n" :unnarrowed t)
       ))
+
+  ;; layer:auto-complete
+  (global-company-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
