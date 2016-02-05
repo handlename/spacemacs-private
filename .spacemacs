@@ -35,10 +35,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages
-   '(
-     editorconfig
-     )
+   dotspacemacs-additional-packages '(editorconfig)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -261,8 +258,12 @@ layers configuration. You are free to put any user code."
   ;; truncate lines
   (setq truncate-lines t)
 
-  ;; enable visual line
+  ;; toggle
   (spacemacs/toggle-visual-line-navigation-on)
+
+  ;; disable truncate-lines
+  ;; http://emacs.stackexchange.com/questions/3747
+  (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
 
   ;; editorconfig
   (editorconfig-mode 1)
