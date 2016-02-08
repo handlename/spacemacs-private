@@ -233,18 +233,17 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+  ;; ENV and PATH
+  ;; run scripts/shellenv.pl to create init_shellenv.el
+  (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
+  (dolist (path (reverse (split-string (getenv "PATH") ":")))
+    (add-to-list 'exec-path path))
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  ;; ENV and PATH
-  ;; run scripts/shellenv.pl to create init_shellenv.el
-  (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
-  (dolist (path (reverse (split-string (getenv "PATH") ":")))
-    (add-to-list 'exec-path path))
-
   ;; meta & super key
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
