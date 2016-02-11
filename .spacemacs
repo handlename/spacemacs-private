@@ -25,6 +25,7 @@ values."
      github
      go
      markdown
+     org
      yaml
      my-dired
      my-perl
@@ -276,6 +277,17 @@ layers configuration. You are free to put any user code."
     '(("github\\.com" . markdown-mode)))
   (add-hook 'edit-server-done-hook
     (lambda () (shell-command "open -a \"Google Chrome\"")))
+
+  ;; layer::org
+  (defvar my:org-directory "~/note")
+  (setq org-agenda-files nil)
+
+  (defun my:org-capture-file-for-today ()
+    (format-time-string (concat my:org-directory "/%Y/%m/%Y-%m-%d.org") (current-time)))
+
+  (setq org-capture-templates
+    '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%U\n%i\n" :unnarrowed t)
+      ))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
