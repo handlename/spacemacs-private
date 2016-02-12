@@ -1,0 +1,57 @@
+# -*- mode: snippet -*-
+# name: slideshow template using remark.js
+# key: slideshow
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+<!-- -*- mode: markdown -*- -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>${1:title}</title>
+        <meta charset="utf-8">
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+            @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+            @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+            body { font-family: 'Droid Serif'; }
+            h1, h2, h3 {
+                font-family: 'Yanone Kaffeesatz';
+                font-weight: normal;
+            }
+            th, td {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+            pre {
+                background-color: lightgray;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="source">
+
+class: center, middle
+
+# ${1:title}
+
+---
+
+# First
+
+$0
+
+---
+
+# Second
+
+        </textarea>
+        <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+        </script>
+        <script>
+            var slideshow = remark.create();
+        </script>
+    </body>
+</html>

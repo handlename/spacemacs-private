@@ -1,0 +1,42 @@
+# -*- mode: snippet -*-
+# name: default for sh file
+# --
+#!/bin/bash
+
+usage() {
+    cat<<EOF
+Usage:
+    $(basename \$0)
+
+Description:
+    This script is ...
+
+Options:
+    --hoge	hogefuga
+EOF
+}
+
+main() {
+    echo "main process"
+}
+
+while [ $# -gt 0 ];
+do
+    case \${1} in
+        help|--help|-h)
+            usage
+            exit 0
+            ;;
+        --debug|-d)
+            set -x
+            ;;
+        --hoge)
+            # do something for hoge
+            # if you need value of --hoge (ex: --hoge "this!!")
+            # you must `shift` to shift args.
+            ;;
+    esac
+    shift
+done
+
+main

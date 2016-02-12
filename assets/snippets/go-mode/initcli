@@ -1,0 +1,39 @@
+# -*- mode: snippet -*-
+# name: default for cli file
+# --
+package main
+
+import (
+	"log"
+	"os"
+
+	"github.com/codegangsta/cli"
+)
+
+var debugLogger = log.New(os.Stderr, "DEBUG: ", log.Ltime|log.Lshortfile)
+
+func debug(v ...interface{}) {
+	if os.Getenv("DEBUG") != "" {
+		debugLogger.Println(v...)
+	}
+}
+
+func debugf(format string, v ...interface{}) {
+	if os.Getenv("DEBUG") != "" {
+		debugLogger.Printf(format, v...)
+	}
+}
+
+func main() {
+	app := cli.NewApp()
+	app.Name = "$0"
+	app.Version = "0.0.1"
+	app.Usage = ""
+	app.Author = "handlename"
+	app.Email = "nagata{at}handlena.me"
+	app.Action = doMain
+	app.Run(os.Args)
+}
+
+func doMain(c *cli.Context) {
+}

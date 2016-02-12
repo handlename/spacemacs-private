@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: init snippet
+# key: init
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ${1:name}
+# key: ${2:keyword}
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --

@@ -1,0 +1,19 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: meta data for blog entry
+# key: blog
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# --
++++
+comments = true
+date = "`(format-time-string "%Y-%m-%dT%H:%M:%S")+09:00`"
+draft = true
+image = ""
+menu = ""
+share = true
+slug = "`(format-time-string "%Y-%m-%d")`/${1:path}"
+categories = ["general"]
+tags = []
+title = "${2:title}"
+
++++
+$0

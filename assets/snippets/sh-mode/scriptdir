@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: get script directory
+# --
+\$(cd \$(dirname \${BASH_SOURCE:-\$0}); pwd)
