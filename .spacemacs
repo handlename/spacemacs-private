@@ -284,14 +284,25 @@ layers configuration. You are free to put any user code."
 
   ;; layer::org
   (defvar my:org-directory "~/note")
-  (setq org-agenda-files nil)
+
+  (defun my:list-dirs-recursively (dir)
+    (let ((paths))
+      (dolist (path (directory-files dir t "[^.]$") paths)
+        (cond
+         ((file-directory-p path)
+          (setq paths (cons path paths))
+          (setq paths (append (my:list-dirs-recursively path) paths)))))))
 
   (defun my:org-capture-file-for-today ()
     (format-time-string (concat my:org-directory "/%Y/%m/%Y-%m-%d.org") (current-time)))
 
   (setq org-capture-templates
-    '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%U\n%i\n" :unnarrowed t)
+    '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%T\n%i\n" :unnarrowed t)
+      ("m" "Today's memo" entry (file+headline (my:org-capture-file-for-today) "Memo") "** %?\n%T\n%i\n" :unnarrowed t)
       ))
+
+  (advice-add 'org-agenda-list :before #'(lambda (&rest args)
+                                           (setq org-agenda-files (my:list-dirs-recursively my:org-directory))))
 
   ;; layer:auto-complete
   (global-company-mode)
