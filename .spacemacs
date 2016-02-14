@@ -310,6 +310,16 @@ layers configuration. You are free to put any user code."
   ;; layer:html
   (add-to-list 'auto-mode-alist '("\\.tx$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tt$" . web-mode))
+
+  ;; layer:markdown
+  (defun my:markdown-preview-file ()
+    "Open current file by Marked."
+    (interactive)
+    (shell-command
+     (format "open -a /Applications/Marked.app %s"
+             (shell-quote-argument (buffer-file-name)))))
+  (spacemacs/set-leader-keys-for-major-mode 'markdown-mode
+    "cp" 'my:markdown-preview-file)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
