@@ -21,6 +21,7 @@ values."
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      chrome
+     csharp
      emacs-lisp
      git
      github
