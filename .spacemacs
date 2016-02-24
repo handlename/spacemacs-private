@@ -31,6 +31,7 @@ values."
      org
      yaml
      my-dired
+     my-editorconfig
      my-perl
      )
    ;; List of additional packages that will be installed without being
