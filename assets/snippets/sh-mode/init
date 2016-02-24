@@ -33,7 +33,7 @@ do
         --hoge)
             # do something for hoge
             # if you need value of --hoge (ex: --hoge "this!!")
-            # you must `shift` to shift args.
+            # you must "shift" to shift args.
             ;;
     esac
     shift
