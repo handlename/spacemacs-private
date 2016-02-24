@@ -262,6 +262,7 @@ layers configuration. You are free to put any user code."
 
   ;; toggle
   (spacemacs/toggle-visual-line-navigation-on)
+  (spacemacs/toggle-mode-line-minor-modes-off)
 
   ;; disable truncate-lines
   ;; http://emacs.stackexchange.com/questions/3747
