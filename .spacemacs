@@ -301,6 +301,7 @@ layers configuration. You are free to put any user code."
 
   (setq org-capture-templates
     '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%T\n%i\n" :unnarrowed t)
+      ("f" "Today's failure" entry (file+headline (my:org-capture-file-for-today) "Failures") "** %?\n%T\n%i\n" :unnarrowed t)
       ("m" "Today's memo" entry (file+headline (my:org-capture-file-for-today) "Memo") "** %?\n%T\n%i\n" :unnarrowed t)
       ))
 
