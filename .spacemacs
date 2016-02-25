@@ -324,6 +324,9 @@ layers configuration. You are free to put any user code."
              (shell-quote-argument (buffer-file-name)))))
   (spacemacs/set-leader-keys-for-major-mode 'markdown-mode
     "cp" 'my:markdown-preview-file)
+
+  ;; layer:ruby
+  (setq ruby-insert-encoding-magic-comment nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
