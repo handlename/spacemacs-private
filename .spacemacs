@@ -296,17 +296,20 @@ layers configuration. You are free to put any user code."
           (setq paths (cons path paths))
           (setq paths (append (my:list-dirs-recursively path) paths)))))))
 
-  (defun my:org-capture-file-for-today ()
-    (format-time-string (concat my:org-directory "/%Y/%m/%Y-%m-%d.org") (current-time)))
+  (defun my:org-capture-file ()
+    (format-time-string (concat my:org-directory "/%Y.org") (current-time)))
 
   (setq org-capture-templates
-    '(("v" "Today's value" entry (file+headline (my:org-capture-file-for-today) "Values") "** %?\n%T\n%i\n" :unnarrowed t)
-      ("f" "Today's failure" entry (file+headline (my:org-capture-file-for-today) "Failures") "** %?\n%T\n%i\n" :unnarrowed t)
-      ("m" "Today's memo" entry (file+headline (my:org-capture-file-for-today) "Memo") "** %?\n%T\n%i\n" :unnarrowed t)
+    '(("m" "Memo" entry (file+headline (my:org-capture-file) "Memo") "** %?\n%T\n%i\n" :unnarrowed t)
+      ("t" "Task" entry (file+headline (my:org-capture-file) "Task") "** TODO %?\n%T\n%i\n" :unnarrowed t)
+      ("i" "Interrupt" entry (file+headline (my:org-capture-file) "Task") "** INT %?\n%T\n" :clock-in t :clock-resume t)
       ))
 
+  (setq org-todo-keywords
+    '((sequence "TODO(t)" "DOING(i!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "INT")))
+
   (advice-add 'org-agenda-list :before #'(lambda (&rest args)
-                                           (setq org-agenda-files (my:list-dirs-recursively my:org-directory))))
+                                           (setq org-agenda-files (cons my:org-directory (my:list-dirs-recursively my:org-directory)))))
 
   ;; layer:auto-complete
   (global-company-mode)
