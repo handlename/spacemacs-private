@@ -308,8 +308,7 @@ layers configuration. You are free to put any user code."
   (setq org-todo-keywords
     '((sequence "TODO(t)" "DOING(i!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)" "INT")))
 
-  (advice-add 'org-agenda-list :before #'(lambda (&rest args)
-                                           (setq org-agenda-files (cons my:org-directory (my:list-dirs-recursively my:org-directory)))))
+  (setq org-agenda-files '(my:org-directory))
 
   ;; layer:auto-complete
   (global-company-mode)
