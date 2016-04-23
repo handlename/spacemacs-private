@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: blog image
+# key: bi
+# binding: direct-keybinding
+# --
+![$1](/images/post/$2/`(format-time-string "%Y-%m-%d")`/$3.png)

@@ -6,14 +6,14 @@
 +++
 comments = true
 date = "`(format-time-string "%Y-%m-%dT%H:%M:%S")+09:00`"
-draft = true
+draft = false
 image = ""
 menu = ""
 share = true
-slug = "`(format-time-string "%Y-%m-%d")`/${1:path}"
-categories = ["general"]
+slug = "${1:slug}"
+categories = ["${2:category}"]
 tags = []
-title = "${2:title}"
+title = "${3:title}"
 
 +++
 $0

@@ -1,0 +1,15 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: hugo entry template
+# key: hugoentry
+# --
++++
+comments = true
+date = "`(format-time-string "%Y-%m-%dT%H:%M:%S+09:00")`"
+draft = true 
+share = true
+slug = "`(format-time-string "%Y-%m-%d")`_$1"
+tags = [$2]
+title = "$3"
++++
+
+$0
