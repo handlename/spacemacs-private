@@ -26,6 +26,7 @@ values."
      html
      markdown
      org
+     version-control
      yaml
      my-dired
      my-editorconfig
