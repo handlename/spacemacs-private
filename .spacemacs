@@ -252,6 +252,7 @@ layers configuration. You are free to put any user code."
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
 
+  ;; custom keybindings
   (global-set-key (kbd "M-<f1>") 'next-multiframe-window)
   (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
 
