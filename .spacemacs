@@ -306,9 +306,9 @@ layers configuration. You are free to put any user code."
     (format-time-string (concat my:org-directory "/%Y.org") (current-time)))
 
   (setq org-capture-templates
-    '(("m" "Memo" entry (file+headline (my:org-capture-file) "Memo") "** %?\n%T\n%i\n" :unnarrowed t)
-      ("t" "Task" entry (file+headline (my:org-capture-file) "Task") "** TODO %? \n%T\n%i\n" :unnarrowed t)
-      ("r" "Task(review)" entry (file+headline (my:org-capture-file) "Task") "** TODO %? :review:\n%T\n%i\n" :unnarrowed t)
+    '(("m" "Memo" entry (file+headline (my:org-capture-file) "Memo") "** %?\n%T\n%i\n")
+      ("t" "Task" entry (file+headline (my:org-capture-file) "Task") "** TODO %? \n%T\n%i\n")
+      ("r" "Task(review)" entry (file+headline (my:org-capture-file) "Task") "** TODO %? :review:\n%T\n%i\n")
       ("i" "Interrupt" entry (file+headline (my:org-capture-file) "Task") "** INT %?\n%T\n" :clock-in t :clock-resume t)
       ))
 
