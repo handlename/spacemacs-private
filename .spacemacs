@@ -280,6 +280,10 @@ layers configuration. You are free to put any user code."
   ;; open-junk-file
   (setq open-junk-file-format "~/junk/%Y/%m/%Y%m%d_%H%M%S.")
 
+  ;; layer:spacemacs-base evil
+  (setq-default evil-search-module "evil-search")
+  (setq-default evil-ex-search-vim-style-regexp t)
+
   ;; layer:evil-escape
   (setq-default evil-escape-key-sequence "ht")
   (setq-default evil-escape-unordered-key-sequence t)
