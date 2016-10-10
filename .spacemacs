@@ -274,6 +274,9 @@ layers configuration. You are free to put any user code."
   ;; http://emacs.stackexchange.com/questions/3747
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
 
+  ;; smartparens
+  (setq-default sp-highlight-pair-overlay nil)
+
   ;; editorconfig
   (editorconfig-mode 1)
 
