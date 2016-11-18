@@ -1,9 +1,9 @@
-(defconst my:perl-packages
+(defconst my-perl-packages
   '(
-    cperl-mode
+    (cperl-mode :location elpa)
     ))
 
-(defun my:perl/init-cperl-mode ()
+(defun my-perl/init-cperl-mode ()
   (use-package cperl-mode
     :defer t
     ))
