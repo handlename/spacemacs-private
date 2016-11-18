@@ -303,32 +303,6 @@ layers configuration. You are free to put any user code."
   (add-hook 'edit-server-done-hook
     (lambda () (shell-command "open -a \"Google Chrome\"")))
 
-  ;; layer::org
-  (defvar my:org-directory "~/note")
-
-  (defun my:list-dirs-recursively (dir)
-    (let ((paths))
-      (dolist (path (directory-files dir t "[^.]$") paths)
-        (cond
-         ((file-directory-p path)
-          (setq paths (cons path paths))
-          (setq paths (append (my:list-dirs-recursively path) paths)))))))
-
-  (defun my:org-capture-file ()
-    (format-time-string (concat my:org-directory "/%Y.org") (current-time)))
-
-  (setq org-capture-templates
-    '(("m" "Memo" entry (file+headline (my:org-capture-file) "Memo") "** %?\n%T\n%i\n")
-      ("t" "Task" entry (file+headline (my:org-capture-file) "Task") "** TODO %? \n%T\n%i\n")
-      ("r" "Task(review)" entry (file+headline (my:org-capture-file) "Task") "** TODO %? :review:\n%T\n%i\n")
-      ("i" "Interrupt" entry (file+headline (my:org-capture-file) "Task") "** INT %?\n%T\n" :clock-in t :clock-resume t)
-      ))
-
-  (setq org-todo-keywords
-    '((sequence "TODO(t)" "WAIT(w@/!)" "|" "DONE(x!)" "CANCELED(c@)" "INT")))
-
-  (setq org-agenda-files (list my:org-directory))
-
   ;; layer:auto-complete
   (global-company-mode)
 
