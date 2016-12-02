@@ -263,6 +263,8 @@ layers configuration. You are free to put any user code."
   ;; custom keybindings
   (global-set-key (kbd "M-<f1>") 'next-multiframe-window)
   (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+  (define-key evil-insert-state-map (kbd "C-n") 'next-line)
+  (define-key evil-insert-state-map (kbd "C-p") 'previous-line)
 
   ;; backup files
   (setq make-backup-files nil)
