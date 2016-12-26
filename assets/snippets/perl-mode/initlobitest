@@ -1,6 +1,9 @@
 # -*- snippet -*-
 # name : test template for Lobi
 # --
+use strict;
+use warnings;
+
 use Test::More;
 use HTTP::Request::Common;
 

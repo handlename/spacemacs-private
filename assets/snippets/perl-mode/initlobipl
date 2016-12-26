@@ -10,10 +10,14 @@ use Nakamap::Batch (
     $0
 );
 
-my $argv = +{%Nakamap::Batch::argv};
+$Nakamap::Batch::enable_dryrun_transaction = 1;
+
+main {
+    my $argv = argv();
+};
+
+__END__
 
 =head1 SYNOPSIS
 
 =head2 OPTIONS
-
-=cut
