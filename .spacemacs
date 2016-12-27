@@ -23,7 +23,6 @@ values."
      emacs-lisp
      git
      github
-     go
      html
      markdown
      org
@@ -34,6 +33,7 @@ values."
      (auto-completion :variables
          auto-completion-tab-key-behavior 'complete
          auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
+     (go :variables gofmt-command "goimports")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
