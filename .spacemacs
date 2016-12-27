@@ -17,9 +17,7 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '((auto-completion :variables
-                      auto-completion-tab-key-behavior 'complete
-                      auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
+    '(
      chrome
      csharp
      emacs-lisp
@@ -33,6 +31,9 @@ values."
      my-dired
      my-editorconfig
      my-perl
+     (auto-completion :variables
+         auto-completion-tab-key-behavior 'complete
+         auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
