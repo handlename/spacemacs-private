@@ -20,6 +20,7 @@ values."
     '(
      chrome
      csharp
+     docker
      emacs-lisp
      git
      github
