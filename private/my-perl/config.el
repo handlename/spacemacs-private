@@ -16,7 +16,8 @@
   '(cperl-close-paren-offset -4)
   '(cperl-tab-always-indent t)
   '(cperl-highlight-variables-indiscriminately t)
-  '(cperl-indent-subs-specially nil))
+  '(cperl-indent-subs-specially nil)
+  '(cperl-indent-region-fix-constructs nil))
 
 ;; always use cperl-mode instead of perl-mode
 (defalias 'perl-mode 'cperl-mode)
