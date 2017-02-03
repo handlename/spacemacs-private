@@ -11,3 +11,9 @@
   (interactive)
   (save-excursion (mark-defun)
     (perltidy-region)))
+
+(defun perltidy-buffer ()
+  "Run perltidy on the current buffer."
+  (interactive)
+  (save-excursion (mark-whole-buffer)
+    (perltidy-region)))
