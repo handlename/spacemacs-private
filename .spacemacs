@@ -31,7 +31,6 @@ values."
      org
      ruby
      sql
-     syntax-checking
      version-control
      yaml
      my-dired
@@ -42,6 +41,8 @@ values."
          auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      (go :variables
          gofmt-command "goimports")
+     (syntax-checking :variables
+         syntax-checking-enable-tooltips nil)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
