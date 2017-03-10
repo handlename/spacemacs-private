@@ -31,6 +31,7 @@ values."
      org
      ruby
      sql
+     syntax-checking
      version-control
      yaml
      my-dired
