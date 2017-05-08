@@ -312,6 +312,9 @@ layers configuration. You are free to put any user code."
   ;; layer:auto-complete
   (global-company-mode)
 
+  ;; layer:text
+  (add-to-list 'auto-mode-alist '("/LICENSE$" . text-mode))
+
   ;; layer:html
   (add-to-list 'auto-mode-alist '("\\.tx$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tt$" . web-mode))
