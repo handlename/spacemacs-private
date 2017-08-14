@@ -312,6 +312,12 @@ layers configuration. You are free to put any user code."
   ;; layer:auto-complete
   (global-company-mode)
 
+  ;; layer:syntax-check
+  (setq-default flycheck-disabled-checkers
+    '(chef-foodcritic
+      ruby-rubocop
+      ))
+
   ;; layer:text
   (add-to-list 'auto-mode-alist '("/LICENSE$" . text-mode))
 
