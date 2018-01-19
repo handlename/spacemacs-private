@@ -332,6 +332,9 @@ layers configuration. You are free to put any user code."
 
   ;; layer:ruby
   (setq ruby-insert-encoding-magic-comment nil)
+
+  ;; layer:go
+  (advice-add 'spacemacs/go-run-tests :filter-args (lambda (args) (list (concat "-v " (car args)))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
