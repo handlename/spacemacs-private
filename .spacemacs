@@ -335,6 +335,10 @@ layers configuration. You are free to put any user code."
 
   ;; layer:go
   (advice-add 'spacemacs/go-run-tests :filter-args (lambda (args) (list (concat "-v " (car args)))))
+
+  ;; layer:ansible
+  ;; https://github.com/syl20bnr/spacemacs/issues/8027
+  (require 'ansible)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
