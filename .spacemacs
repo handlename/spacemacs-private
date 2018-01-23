@@ -58,6 +58,8 @@ This function should only modify configuration layer settings."
      (go :variables
          gofmt-command "goimports"
          go-use-gometalinter t)
+     (markdown :variables
+         markdown-hide-urls nil)
      (syntax-checking :variables
          syntax-checking-enable-tooltips t
          flycheck-rubocop-lint-only t)
