@@ -30,13 +30,13 @@ values."
      markdown
      nginx
      org
+     perl5
      ruby
      sql
      version-control
      yaml
      my-dired
      my-editorconfig
-     my-perl
      (auto-completion :variables
          auto-completion-tab-key-behavior 'complete
          auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
@@ -329,6 +329,9 @@ layers configuration. You are free to put any user code."
   ;; layer:html
   (add-to-list 'auto-mode-alist '("\\.tx$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tt$" . web-mode))
+
+  ;; layer:perl5
+  (add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
 
   ;; layer:ruby
   (setq ruby-insert-encoding-magic-comment nil)
