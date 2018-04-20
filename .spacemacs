@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      nginx
      org
      perl5
+     python
      ruby
      sql
      version-control
