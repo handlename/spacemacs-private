@@ -450,11 +450,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  ;; ENV and PATH
-  ;; run scripts/shellenv.pl to create init_shellenv.el
-  (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
-  (dolist (path (reverse (split-string (getenv "PATH") ":")))
-      (add-to-list 'exec-path path))
   )
 
 (defun dotspacemacs/user-config ()
@@ -463,6 +458,12 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; ENV and PATH
+  ;; run scripts/shellenv.pl to create init_shellenv.el
+  (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
+  (dolist (path (reverse (split-string (getenv "PATH") ":")))
+      (add-to-list 'exec-path path))
+
   ;; meta & super key
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
