@@ -530,7 +530,7 @@ before packages are loaded."
       ))
   (flycheck-define-checker perl-project-libs
     "A perl syntax checker."
-    :command ((expand-file-name "~/.anyenv/envs/plenv/shims/perl")
+    :command ("perl"
               "-MProject::Libs lib_dirs => [qw(local/lib/perl5 local.osx/lib/perl5)]"
               "-wc"
               source-inplace)
