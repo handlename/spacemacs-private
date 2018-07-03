@@ -505,6 +505,9 @@ before packages are loaded."
   ;; git-complete
   (require 'git-complete)
 
+  ;; projectile
+  (setq projectile-enable-caching t)
+
   ;; layer:spacemacs-base evil
   (setq-default evil-search-module "evil-search")
   (setq-default evil-ex-search-vim-style-regexp t)
