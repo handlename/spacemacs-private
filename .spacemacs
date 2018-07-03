@@ -512,7 +512,7 @@ before packages are loaded."
   ;; layer:evil-escape
   (setq-default evil-escape-key-sequence "ht")
   (setq-default evil-escape-unordered-key-sequence t)
-  (setq-default evil-escape-delay 0.03)
+  (setq-default evil-escape-delay 0.02)
 
   ;; layer:chrome
   (setq edit-server-url-major-mode-alist
