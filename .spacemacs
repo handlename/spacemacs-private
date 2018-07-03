@@ -64,6 +64,8 @@ This function should only modify configuration layer settings."
      (syntax-checking :variables
          syntax-checking-enable-tooltips t
          flycheck-rubocop-lint-only t)
+     (terraform :variables
+        terraform-auto-format-on-save t)
      )
 
    ;; List of additional packages that will be installed without being
@@ -77,7 +79,6 @@ This function should only modify configuration layer settings."
                                       editorconfig
                                       plantuml-mode
                                       quickrun
-                                      terraform-mode
                                       (git-complete :location (recipe
                                                                :fetcher github
                                                                :repo "zk-phi/git-complete"))
