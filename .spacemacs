@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
          syntax-checking-enable-tooltips t
          flycheck-rubocop-lint-only t)
      (terraform :variables
-        terraform-auto-format-on-save t)
+         terraform-auto-format-on-save t)
      )
 
    ;; List of additional packages that will be installed without being
