@@ -8,7 +8,7 @@ package `
                                   (car (last (split-string file-path "/lib/"))))
       (file-name-nondirectory file-path)))
 `;
-use strict;
+use ${1:5.012};
 use warnings;
 use utf8;
 
