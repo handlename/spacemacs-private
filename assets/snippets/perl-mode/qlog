@@ -1,0 +1,9 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: dump query log
+# key: qlog
+# --
+use DBIx::QueryLog ();
+DBIx::QueryLog->color("red");
+DBIx::QueryLog->compact(1);
+DBIx::QueryLog->enable;
+DBIx::QueryLog->disable;

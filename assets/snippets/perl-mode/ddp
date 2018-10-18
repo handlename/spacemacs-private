@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: dump object with Data::Printer
+# key: ddp
+# --
+use DDP; p $0

@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: strftime %H
+# key: strftime hour
+# --
+%H
