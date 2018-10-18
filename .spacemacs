@@ -566,7 +566,7 @@ before packages are loaded."
   ;; layer:go
   (advice-add 'spacemacs/go-run-tests :filter-args (lambda (args) (list (concat "-v " (car args)))))
   (setq flycheck-gometalinter-disable-all t)
-  (setq flycheck-gometalinter-enable-linters '("golint" "vet" "varcheck" "errcheck"))
+  (setq flycheck-gometalinter-enable-linters '("golint" "vet"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
