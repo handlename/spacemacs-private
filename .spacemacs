@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      github
      html
      javascript
+     lua
      markdown
      nginx
      org
