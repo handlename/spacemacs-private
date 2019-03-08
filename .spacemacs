@@ -42,6 +42,7 @@ This function should only modify configuration layer settings."
      git
      github
      html
+     ivy
      javascript
      lua
      markdown
