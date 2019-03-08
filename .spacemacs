@@ -60,7 +60,11 @@ This function should only modify configuration layer settings."
          auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      (go :variables
          gofmt-command "goimports"
+         go-backend 'lsp
          go-use-gometalinter t)
+     (lsp :variables
+         lsp-ui-doc-enable nil
+         lsp-ui-sideline-enable nil)
      (markdown :variables
          markdown-hide-urls nil)
      (syntax-checking :variables
