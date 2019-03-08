@@ -568,6 +568,12 @@ before packages are loaded."
   (setq go-format-before-save t)
   (setq flycheck-gometalinter-disable-all t)
   (setq flycheck-gometalinter-enable-linters '("golint" "vet"))
+
+  ;; layer:markdown
+  ;; fix keybinding collision with orgtbl-mode
+  (spacemacs|use-package-add-hook markdown-mode
+    :post-config
+    (remove-hook 'markdown-mode-hook 'orgtbl-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
