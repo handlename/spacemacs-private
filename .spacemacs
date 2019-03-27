@@ -539,6 +539,7 @@ before packages are loaded."
   (global-company-mode)
 
   ;; layer:syntax-check
+  (require 'flycheck)
   (setq-default flycheck-disabled-checkers
     '(chef-foodcritic
       ruby-rubocop
