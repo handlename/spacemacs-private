@@ -83,6 +83,7 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+                                      direnv
                                       editorconfig
                                       plantuml-mode
                                       quickrun
@@ -500,11 +501,14 @@ before packages are loaded."
   ;; http://emacs.stackexchange.com/questions/3747
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
 
+  ;; direnv-mode
+  (direnv-mode)
+
   ;; smartparens
   (setq-default sp-highlight-pair-overlay nil)
 
   ;; editorconfig
-  (add-to-list 'editorconfig-indentation-alist '(go-mode go-tab-width))
+  ;; (add-to-list 'editorconfig-indentation-alist '(go-mode go-tab-width))
   (editorconfig-mode 1)
 
   ;; open-junk-file
