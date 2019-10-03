@@ -52,6 +52,8 @@ This function should only modify configuration layer settings."
      python
      ruby
      sql
+     syntax-checking
+     typescript
      version-control
      yaml
      my-dired
@@ -86,6 +88,7 @@ This function should only modify configuration layer settings."
                                       editorconfig
                                       plantuml-mode
                                       quickrun
+                                      vue-mode
                                       (git-complete :location (recipe
                                                                :fetcher github
                                                                :repo "zk-phi/git-complete"))
