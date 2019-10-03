@@ -89,6 +89,9 @@ This function should only modify configuration layer settings."
                                       (git-complete :location (recipe
                                                                :fetcher github
                                                                :repo "zk-phi/git-complete"))
+                                      (fluentd-mode :location (recipe
+                                                               :fetcher github
+                                                               :repo "syohex/emacs-fluentd-mode"))
                                       )
 
    ;; A list of packages that cannot be updated.
