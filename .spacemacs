@@ -48,7 +48,6 @@ This function should only modify configuration layer settings."
      lua
      markdown
      nginx
-     org
      perl5
      python
      ruby
