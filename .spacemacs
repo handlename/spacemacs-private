@@ -63,7 +63,7 @@ This function should only modify configuration layer settings."
      (go :variables
          gofmt-command "goimports"
          go-backend 'lsp
-         go-use-gometalinter t)
+         go-use-golangci-lint t)
      (lsp :variables
          lsp-ui-doc-enable nil
          lsp-ui-sideline-enable nil)
