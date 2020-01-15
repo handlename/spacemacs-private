@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
      perl5
      python
      ruby
+     shell-scripts
      sql
      syntax-checking
      typescript
