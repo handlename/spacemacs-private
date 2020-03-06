@@ -583,6 +583,10 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.tx$" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tt$" . web-mode))
 
+  ;; layer:javascript
+  (setq js2-strict-missing-semi-warning nil)
+  (setq js2-missing-semi-one-line-override nil)
+
   ;; layer:perl5
   (add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
 
