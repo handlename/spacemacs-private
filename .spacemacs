@@ -594,7 +594,6 @@ before packages are loaded."
   (setq ruby-insert-encoding-magic-comment nil)
 
   ;; layer:go
-  (advice-add 'spacemacs/go-run-tests :filter-args (lambda (args) (list (concat "-v " (car args)))))
   (setq go-format-before-save t)
   (setq flycheck-gometalinter-disable-all t)
   (setq flycheck-gometalinter-enable-linters '("golint" "vet"))
