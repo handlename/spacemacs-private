@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      markdown
      nginx
      perl5
+     protobuf
      python
      shell-scripts
      sql
