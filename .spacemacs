@@ -544,6 +544,9 @@ before packages are loaded."
   (setq-default evil-escape-unordered-key-sequence t)
   (setq-default evil-escape-delay 0.03)
 
+  ;; layer:treemacs
+  (treemacs-icons-dired-mode t)
+
   ;; layer:chrome
   (setq edit-server-url-major-mode-alist
     '(("github\\.com" . markdown-mode)))
