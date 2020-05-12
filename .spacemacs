@@ -49,7 +49,6 @@ This function should only modify configuration layer settings."
      nginx
      perl5
      python
-     ruby
      shell-scripts
      sql
      syntax-checking
@@ -69,6 +68,8 @@ This function should only modify configuration layer settings."
          lsp-ui-sideline-enable nil)
      (markdown :variables
          markdown-hide-urls nil)
+     (ruby :variables
+         ruby-version-manager 'rbenv)
      (syntax-checking :variables
          syntax-checking-enable-tooltips t
          flycheck-rubocop-lint-only t)
