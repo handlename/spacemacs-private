@@ -464,7 +464,14 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+   ;; `spacemacs/load-spacemacs-env' modifies PATH order, order of executables will be changed...
+   ;; (spacemacs/load-spacemacs-env)
+
+   (load-file "~/src/github.com/handlename/spacemacs-private/ondemand/shellenv.el")
+   (setq exec-path '())
+   (dolist (path (reverse (split-string (getenv "PATH") ":")))
+     (add-to-list 'exec-path path))
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
