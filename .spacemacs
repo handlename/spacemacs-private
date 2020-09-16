@@ -50,7 +50,6 @@ This function should only modify configuration layer settings."
      perl5
      protobuf
      python
-     shell-scripts
      sql
      syntax-checking
      typescript
@@ -71,6 +70,8 @@ This function should only modify configuration layer settings."
          markdown-hide-urls nil)
      (ruby :variables
          ruby-version-manager 'rbenv)
+     (shell-scripts :packages
+         (not company-shell))
      (syntax-checking :variables
          syntax-checking-enable-tooltips t
          flycheck-rubocop-lint-only t)
