@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      html
      ivy
      javascript
+     jsonnet
      lua
      markdown
      nginx
@@ -600,6 +601,12 @@ before packages are loaded."
   ;; layer:javascript
   (setq js2-strict-missing-semi-warning nil)
   (setq js2-missing-semi-one-line-override nil)
+
+  ;; layer:jsonnet
+  (defun my-jsonnet-mode-before-save-hook ()
+    (when (eq major-mode 'jsonnet-mode)
+      (jsonnet-reformat-buffer)))
+  (add-hook 'before-save-hook #'my-jsonnet-mode-before-save-hook)
 
   ;; layer:perl5
   (add-to-list 'auto-mode-alist '("\\.t$" . cperl-mode))
