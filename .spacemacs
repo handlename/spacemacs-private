@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
      lua
      markdown
      nginx
-     perl5
      protobuf
      python
      sql
@@ -67,6 +66,8 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-enable nil)
      (markdown :variables
                markdown-hide-urls nil)
+     (perl5 :variables
+            perl5-backend nil)
      (ruby :variables
            ruby-version-manager 'rbenv)
      (shell-scripts :packages
