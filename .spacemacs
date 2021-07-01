@@ -67,6 +67,8 @@ This function should only modify configuration layer settings."
           lsp-ui-sideline-enable nil)
      (markdown :variables
                markdown-hide-urls nil)
+     (org :variables
+          org-enable-org-journal-support t)
      (perl5 :variables
             perl5-backend nil)
      (ruby :variables
@@ -624,6 +626,20 @@ before packages are loaded."
   (spacemacs|use-package-add-hook markdown-mode
     :post-config
     (remove-hook 'markdown-mode-hook 'orgtbl-mode))
+
+  ;; layer:org
+  (with-eval-after-load 'org
+    (setq org-directory "~/journal/")
+    (setq org-agenda-files (list org-directory))
+    (setq org-journal-dir org-directory)
+
+    (defun my-org-get-todays-file ()
+      (concat org-journal-dir
+              (format-time-string "%Y-%m-%d.org" (current-time))))
+
+    (setq org-capture-templates
+          '(("m" "memo" entry (file+headline my-org-get-todays-file "Memo") "** %?\n   %T\n   %i\n" :unnarrowed t)
+            )))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
