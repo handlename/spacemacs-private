@@ -1,4 +1,5 @@
 # -*- mode: snippet -*-
-# name: join items in array
+# name: join array
+# key: join-array
 # --
-IFS="${1:separator}" eval '${2:result}="\${${3:array}[*]}"'
+"$(IFS='${1:sep}'; echo "\${${2:array}[*]}")"
