@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ansible
+   '(ansible
      chrome
      csharp
      dash
@@ -57,26 +56,27 @@ This function should only modify configuration layer settings."
      yaml
      my-dired
      (auto-completion :variables
-         auto-completion-tab-key-behavior 'complete
-         auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-private-snippets-directory "~/src/github.com/handlename/spacemacs-private/assets/snippets")
      (go :variables
          gofmt-command "goimports"
          go-backend 'lsp
          go-use-golangci-lint t)
      (lsp :variables
-         lsp-ui-doc-enable nil
-         lsp-ui-sideline-enable nil)
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil)
      (markdown :variables
-         markdown-hide-urls nil)
+               markdown-hide-urls nil)
      (ruby :variables
-         ruby-version-manager 'rbenv)
+           ruby-version-manager 'rbenv)
      (shell-scripts :packages
-         (not company-shell))
+                    (not company-shell))
      (syntax-checking :variables
-         syntax-checking-enable-tooltips t
-         flycheck-rubocop-lint-only t)
+                      syntax-checking-enable-tooltips t
+                      flycheck-rubocop-lint-only t)
      (terraform :variables
-         terraform-auto-format-on-save t)
+                terraform-auto-format-on-save t
+                terraform-backend nil)
      )
 
    ;; List of additional packages that will be installed without being
