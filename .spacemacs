@@ -583,6 +583,12 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; my-functions
+  (defun my-directory-files (d)
+    (let* ((path (file-name-as-directory (expand-file-name d)))
+           (command (concat "ls -A1d " path "*")))
+      (split-string (shell-command-to-string command) "\n" t)))
+
   ;; meta & super key
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
@@ -713,9 +719,8 @@ before packages are loaded."
 
   ;; layer:org
   (with-eval-after-load 'org
-    (setq org-directory "~/journal/")
-    (setq org-agenda-files (list org-directory))
-    (setq org-journal-dir org-directory)
+    (setq org-directory "~/capture")
+    (setq org-agenda-files (my-directory-files org-directory))
 
     (defun my-org-get-todays-file ()
       (concat org-directory
