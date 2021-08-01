@@ -68,7 +68,8 @@ This function should only modify configuration layer settings."
      (markdown :variables
                markdown-hide-urls nil)
      (org :variables
-          org-enable-org-journal-support t)
+          org-enable-org-journal-support t
+          org-enable-hugo-support t)
      (perl5 :variables
             perl5-backend nil)
      (ruby :variables
@@ -721,7 +722,35 @@ before packages are loaded."
 
     (setq org-capture-templates
           '(("m" "memo" entry (file+headline my-org-get-todays-file "Memo") "** %?\n   %T\n   %i\n" :unnarrowed t)
-            )))
+            ))
+    ;; to enable custom config in `info',
+    ;; redefine org-export-define-derived-backend is required.
+    ;; (defcustom org-hugo-allow-dots-in-tags t
+    ;;   "When non-nil, replace `_dot_' in Org tags with periods."
+    ;;   :group 'org-export-hugo
+    ;;   :type 'boolean)
+    (defun org-hugo--replace-dots-with-periods (str)
+      "Replace `_dot_' in STR with single periods."
+      (let ((ret str)
+            (rgx "_dot_"))
+        (while (string-match-p rgx ret)
+          (message "ret=%s" ret)
+          (setq ret (replace-regexp-in-string rgx "." ret)))
+        ret))
+    (defun org-hugo--tag-processing-fn-replace-with-dots-maybe (tag-list info)
+      "Replace `_dot_' in TAG-LIST elements with single period."
+      (let ((allow-dots org-hugo-allow-dots-in-tags)
+            ; (allow-dots (org-hugo--plist-get-true-p info :hugo-allow-dots-in-tags))
+            )
+        (if allow-dots
+            (mapcar #'org-hugo--replace-dots-with-periods tag-list)
+          tag-list)))
+    (custom-set-variables '(org-hugo-tag-processing-functions '(org-hugo--tag-processing-fn-replace-with-dots-maybe
+                                                                org-hugo--tag-processing-fn-replace-with-spaces-maybe
+                                                                org-hugo--tag-processing-fn-replace-with-hyphens-maybe)))
+    ;; (custom-set-variables '(org-hugo-allow-dots-in-tags t))
+    (org-hugo-auto-export-mode t)
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
