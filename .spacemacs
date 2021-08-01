@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      lua
      markdown
      nginx
+     org
      protobuf
      python
      sql
@@ -717,8 +718,8 @@ before packages are loaded."
     (setq org-journal-dir org-directory)
 
     (defun my-org-get-todays-file ()
-      (concat org-journal-dir
-              (format-time-string "%Y-%m-%d.org" (current-time))))
+      (concat org-directory
+              (format-time-string "/%Y/%Y-%m-%d.org" (current-time))))
 
     (setq org-capture-templates
           '(("m" "memo" entry (file+headline my-org-get-todays-file "Memo") "** %?\n   %T\n   %i\n" :unnarrowed t)
